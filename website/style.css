@@ -17,13 +17,13 @@ body{
 
 /* global classes */
 .font-staat{
-    font: oblique 5deg 400 18px var(--font-staat);
+    font: oblique 100deg 400 18px var(--font-staat);
 }
 .font-os{
     font: normal 300 18px var(--font-os);
 }
 .font-ram{
-    font: italic bold 18px var(--font-ram);
+    font: normal bold 18px var(--font-ram);
 }
 
 .font-size-40{
@@ -172,7 +172,7 @@ body{
   }
 
   .dev-icons {
-    font-size: 5rem;
+    font-size: 1rem;
   }
   
   .dev-icons .list-inline-item :hover {

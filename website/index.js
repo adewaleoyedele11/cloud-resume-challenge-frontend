@@ -57,11 +57,26 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 const counter = document.querySelector(".counter-number");
+const counter2 = document.querySelector(".footer-counter");
 async function updateCounter() {
     let response = await fetch(
         "https://ofcfjltfrutgp6nekkukv7weu40sxibu.lambda-url.us-east-1.on.aws/"
     );
     let data = await response.json();
     counter.innerHTML = `👀 Views: ${data}`;
+    counter2.innerHTML = `👀 Views: ${data}`;
 }
 updateCounter();
+
+
+// document.addEventListener("DOMContentLoaded", () => {
+//     const counter = document.querySelector("#footer .counter-number");
+//     async function updateCounter() {
+//         let response = await fetch(
+//             "https://ofcfjltfrutgp6nekkukv7weu40sxibu.lambda-url.us-east-1.on.aws/"
+//         );
+//         let data = await response.json();
+//         counter.innerHTML = `👀 Views: ${data}`;
+//     }
+//     updateCounter();
+// });
