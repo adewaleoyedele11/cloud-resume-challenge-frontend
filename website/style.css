@@ -6,10 +6,10 @@ body{
 }
 
 :root{
-    --color-black: #000000;
-    --color-white: #ffffff;
+    --color-black: #331d72;
+    --color-white: #0d032b;
     --color-border: #ffffff34;
-    --color-blue: #6C63FF;
+    --color-blue: #942db7;
     --font-staat: 'Staatliches', cursive;
     --font-os:  'Oswald', sans-serif;
     --font-ram: 'Rambla', sans-serif;
@@ -17,13 +17,13 @@ body{
 
 /* global classes */
 .font-staat{
-    font: normal 400 18px var(--font-staat);
+    font: oblique 5deg 400 18px var(--font-staat);
 }
 .font-os{
     font: normal 300 18px var(--font-os);
 }
 .font-ram{
-    font: normal bold 18px var(--font-ram);
+    font: italic bold 18px var(--font-ram);
 }
 
 .font-size-40{
@@ -67,7 +67,7 @@ body{
 
 #header .nav-link{
     margin: .7rem 1rem;
-    border-bottom: 1px solid var(--color-border);
+    border-bottom: 5px solid var(--color-border);
     text-transform: uppercase;
 }
 
@@ -126,7 +126,7 @@ body{
 #footer form textarea{
     border: none;
     border-radius: 0;
-    border-bottom: 1px solid gray;
+    border-bottom: 1px solid #1dc118;
     padding: 1.5rem 1rem;
 }
 
@@ -215,7 +215,7 @@ body{
 
 /*project icons- github and live site*/
 .giti, .eye{
-    font-size: 3rem;
+    font-size: 100rem;
     color: var(--color-white);
 }
 
