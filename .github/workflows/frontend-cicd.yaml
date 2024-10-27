@@ -10,6 +10,7 @@ jobs:
       with:
         args: --acl public-read --follow-symlinks --delete
       env:
+        AWS_GHA_ROLE: ${{ secrets.AWS_GHA_ROLE }}
         SOURCE_DIR: './website'
         AWS_REGION: 'us-east-1'
         AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
