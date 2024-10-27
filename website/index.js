@@ -56,27 +56,66 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-const counter = document.querySelector(".counter-number");
-const counter2 = document.querySelector(".footer-counter");
-async function updateCounter() {
-    let response = await fetch(
-        "https://ofcfjltfrutgp6nekkukv7weu40sxibu.lambda-url.us-east-1.on.aws/"
-    );
-    let data = await response.json();
-    counter.innerHTML = `👀 Views: ${data}`;
-    counter2.innerHTML = `👀 Views: ${data}`;
-}
-updateCounter();
+// const counter = document.querySelector(".counter-number");
+// const counter2 = document.querySelector(".footer-counter");
+// async function updateCounter() {
+//     let response = await fetch(
+//         "https://ofcfjltfrutgp6nekkukv7weu40sxibu.lambda-url.us-east-1.on.aws/"
+//     );
+//     let data = await response.json();
+//     counter.innerHTML = `👀 Views: ${data}`;
+//     counter2.innerHTML = `👀 Views: ${data}`;
+// }
+// updateCounter();
 
 
 // document.addEventListener("DOMContentLoaded", () => {
-//     const counter = document.querySelector("#footer .counter-number");
+//     // Select all counter elements (nav and footer)
+//     const counters = document.querySelectorAll(".counter-number, .footer-counter");
+
+//     // Function to update counters
 //     async function updateCounter() {
-//         let response = await fetch(
-//             "https://ofcfjltfrutgp6nekkukv7weu40sxibu.lambda-url.us-east-1.on.aws/"
-//         );
-//         let data = await response.json();
-//         counter.innerHTML = `👀 Views: ${data}`;
+//         try {
+//             let response = await fetch(
+//                 "https://ofcfjltfrutgp6nekkukv7weu40sxibu.lambda-url.us-east-1.on.aws/"
+//             );
+//             let data = await response.json();
+
+//             // Update all selected counters
+//             counters.forEach(counter => {
+//                 counter.innerHTML = `👀 Views: ${data}`;
+//             });
+//         } catch (error) {
+//             console.error("Failed to update the counters:", error);
+//             counters.forEach(counter => {
+//                 counter.innerHTML = "Couldn't read the counter";
+//             });
+//         }
 //     }
+
 //     updateCounter();
 // });
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const counters = document.querySelectorAll(".counter-number, .footer-counter");
+    
+    async function updateCounter() {
+        try {
+            let response = await fetch(
+                "https://ofcfjltfrutgp6nekkukv7weu40sxibu.lambda-url.us-east-1.on.aws/"
+            );
+            let data = await response.json();
+            
+            counters.forEach(counter => {
+                counter.innerHTML = `👀 Views: ${data}`;
+            });
+        } catch (error) {
+            console.error("Failed to update the counter:", error);
+        }
+    }
+
+    updateCounter();
+});
+
+
