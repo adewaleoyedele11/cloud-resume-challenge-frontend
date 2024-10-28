@@ -5,8 +5,11 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
-    - uses: mirrorweb/s3-sync-action@master
+    - name: Checkout the code
+      uses: actions/checkout@v2
+
+    - name: Sync with S3
+      uses: mirrorweb/s3-sync-action@master
       with:
         args: --follow-symlinks --delete
       env:
